@@ -45,7 +45,7 @@
 
 <body style='margin : 0px; overflow: hidden;'>
     <div class="arjs-loader">
-        <div>Loading, please wait</div>
+        <div>Loading, please wait.</div>
     </div>
     <a-scene
         vr-mode-ui="enabled: false;"
@@ -55,18 +55,19 @@
         <a-assets>
             <video src="https://bulat247.github.io/aframe_video_test/Content.mp4"
                 preload="auto" id="vid" response-type="arraybuffer" loop
-                crossorigin webkit-playsinline autoplay muted playsinline>
+                crossorigin webkit-playsinline autoplay playsinline>
             </video>
         </a-assets>
 
         <a-nft
             videohandler
             type='nft' url='https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/data/dataNFT/pinball'
-            smooth="true" smoothCount="10" smoothTolerance="0.01" smoothThreshold="5"
+            smooth="true" smoothCount="50" smoothTolerance="0.1" smoothThreshold="3"
         >
             <a-video
                 src="#vid"
                 position='50 150 -100'
+                rotattion='90 0 0'
                 width='300'
                 height='175'
                 >
