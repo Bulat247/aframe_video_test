@@ -45,7 +45,7 @@
 
 <body style='margin : 0px; overflow: hidden;'>
     <div class="arjs-loader">
-        <div>Loading.</div>
+        <div>Loading...</div>
     </div>
     <a-scene
         vr-mode-ui="enabled: false;"
@@ -56,6 +56,7 @@
             <video src="https://bulat247.github.io/aframe_video_test/Content.mp4"
                 preload="auto" id="vid" response-type="arraybuffer" loop
                 crossorigin webkit-playsinline autoplay playsinline
+                <meta name="apple-mobile-web-app-capable" content="yes">
             </video>
         </a-assets>
 
@@ -70,6 +71,7 @@
                 rotation="270 0 0"
                 width="1169"
                 height="702"
+                <meta name="apple-mobile-web-app-capable" content="yes">
                 >
             </a-video>
         </a-nft>
