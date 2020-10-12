@@ -20,6 +20,23 @@
             }
         });
     };
+
+    AFRAME.registerComponent('play-on-window-click', {
+  init: function () {
+    this.onClick = this.onClick.bind(this);
+  },
+  play: function () {
+    window.addEventListener('click', this.onClick);
+  },
+  pause: function () {
+    window.removeEventListener('click', this.onClick);
+  },
+  onClick: function (evt) {
+    var video = this.el.components.material.material.map.image;
+    if (!video) { return; }
+    video.play();
+  }
+});
 </script>
 
 <style>
@@ -50,7 +67,7 @@
 
 <body style='margin : 0px; overflow: hidden;'>
     <div class="arjs-loader">
-        <div>Loading</div>
+        <div>Loading!</div>
     </div>
     <a-scene
     vr-mode-ui="enabled: false;"
@@ -84,6 +101,7 @@
             smoothThreshold="1"
         >
             <a-video
+                play-on-window-click
                 src="#vid"
                 position="0 -100 0"
                 rotation="270 0 0"
